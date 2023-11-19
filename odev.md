@@ -42,7 +42,8 @@ eğer birden fazla satırı yorum satırı olarak alacaksam ; /* */  ile kullan�
 
 8- this,
 Çağrıldığı nesneyi belirtir. Değeri ise çağrıldığı yere göre değişir. 
-Örnek:  ![buradaki this ise listItems[x] i temsil eder](image.png)
+Örnek: 
+ ![buradaki this ise listItems[x] i temsil eder](image.png)
 
 9- ==, eğer iki değer de aynı tipte ise, değişkenlerin tiplerini eşitler. Değerler eşitse true döndürür, değilse false döndürür. Örnek:        null==undefined    "  true  "
    === , değerlerin ve veri tiplerinin aynı olup olmadığını kontrol eder. Örnek: null===undefined   " false   "
@@ -56,15 +57,97 @@ değişken tekrar oluşturulmaz |  aynı değişken tanımlamalarında en son de
 --------------------- | ---------------------- | ---------------------------
 ister ilk değer ata ister atama |  ilk değer atamazsak undefined döner | ilk değer atamak zorundayız 
 
-11- Arrow fonksiyon, contructor olarak kullanılamazlar.
-Normal fonksiyon,
+11- Normal fonksiyon, hem çağırılabilir hem de yapılandırılabilir olduğundan, 'new' anahtar sözcüğü kullanılarak çağrılabilirler. Ancak, arrow fonksiyon yalnızca "çağrılabilir", yapılandırılamaz ve contructor olarak kullanılamazlar. Çalışma zamanı hatası alırız.
 
-12-
-13-
-14-
-15-
-16-
-17-
+![arrow function error](image-1.png)
+
+12- let i = 2;
+switch (i) {
+  case 1:
+    let a = 1;
+    console.log(a);
+    break;
+  case 2:
+    let b = 2;
+    console.log(b);
+    break;
+  default:
+}
+
+13- Sadece aldığı aynı girdiyi baz alarak aynı sonucu üretir ve dışarıya herhangi bir etkisi yok.
+
+14- fonksiyon tanımının parametreleri içinde kullanılan ... noktayı temsil eder. bütün argümanları bir dizide toplar.
+ Gönderilecek tüm argümanları toplar bu yüzden son parametreden önce rest'i eklemenin bir anlamı kalmıyor.
+ function sum(...nums) {
+    let a = 0;
+    for (let num of nums) 
+    a += num;
+    return console.log(a)
+  }
+
+15- birden çok değişken tanımlamak yerine object destructuring kullanabiliriz şu şekilde: nesnenin verilerine erişmek istediğimizde Property lerini veya fonksiyonunu kullanırız. 
+
+const TC = {isim: 'ece', yas: 21 }
+const { isim } = TC // buradaki isim değişkeni object destructing ile atandı
+
+16- 1. const object = { isim: 'ece', yas: 21 };
+
+2. const isim = "ece";
+const yas = 21;
+const object2 = { isim, yas };
+
+3. const obj3 = {};
+object3.isim = "ece";
+object3.yas = 21;
+
+4. const object4 = new Object();
+object4.isim = "ece";
+object4.yas = 21;
+
+5. const object5 = Object.create(null);
+object5.isim = "ece";
+object5.yas = 21;
+
+6. const object6 = Object.assign({}, { isim: "ece", yas: 21 });
+
+
+17-  1. const object = {
+    isim: 'ece',
+    yas: '21'
+}
+
+const newObject = {}
+for(const key in object){
+    const value = object[key];
+    const sum = value.length;
+    newObject[key] = sum;
+}
+console.log(newObject)
+
+2.  let object = {
+    isim: 'ece',
+    yas: '26'
+}
+
+const newObject  = {}
+Object.entries(object).forEach(([value, key]) => {
+    newObject[value] = key.length
+})
+
+console.log(newObject)
+
 18-
-19-
-20-
+Cookie | local storage  | session storage
+--------------------- | ---------------------- | ---------------------------
+4 kb a kadar veri depolamaya sahip |  5 kb a kadar veri depolamaya sahip | 5 kb a kadar veri depolamaya sahip
+--------------------- | ---------------------- | ---------------------------
+Hem sunucu hem istemci tarafından erişilebilir | istemci tarafından erişilebilir |  istemci tarafından erişilebilir 
+--------------------- | ---------------------- | ---------------------------
+string verileri depolama |  string, number, vb. her türlü veriyi depolama | string, number, vb. her türlü veriyi depolama
+--------------------- | ---------------------- | ---------------------------
+Belirli süreye kadar verileri tutar	 |  silinene kadar verileri tutar | sekme kapanana kadar verileri tutar
+
+19- Senkron'da bir işlem tamamlanmadan diğer işleme geçilmez. asenkron' da işlemler aynı anda başlar ve birbirlerini beklemeden devam ederler. İşlem sonuçları hangi işlemin önce tamamlandığına göre (kendi tamamlanma sürelerine bağlı) döner.
+
+20- asenkron işlemleri yönetmek ve kontrol etmek için kullanılır. önemli durumları: Pending(waıtıng) , Fullfilled(success), reject (error)
+
