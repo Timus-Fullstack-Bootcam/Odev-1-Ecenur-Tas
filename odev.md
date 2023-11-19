@@ -47,11 +47,10 @@ eğer birden fazla satırı yorum satırı olarak alacaksam ; /* */  ile kullan�
 9- ==, eğer iki değer de aynı tipte ise, değişkenlerin tiplerini eşitler. Değerler eşitse true döndürür, değilse false döndürür. Örnek:        null==undefined    "  true  "
    === , değerlerin ve veri tiplerinin aynı olup olmadığını kontrol eder. Örnek: null===undefined   " false   "
  
-10- | let,var,const |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Blok kapsamlı element,Standart bir değişken tanımlamada kullanırız,Sabit değişken tanımlamada kullanırız(blok kapsamı dahilindedir) |
-| değişken tekrar oluşturulmaz,aynı değişken tanımlamalarında en son değişkenin tuttuğu veri geçerlidir,aynı değişken isminden tekrar oluşturamazsın. |
-| ister ilk değer ata ister atama,ilk değer atamazsak undefined döner,ilk değer atamak zorundayız   |
+10- | let | var | const |
+| Blok kapsamlı element | Standart bir değişken tanımlamada kullanırız | Sabit değişken tanımlamada kullanırız(blok kapsamı dahilindedir) |
+| değişken tekrar oluşturulmaz | aynı değişken tanımlamalarında en son değişkenin tuttuğu veri geçerlidir | aynı değişken isminden tekrar oluşturamazsın. |
+| ister ilk değer ata ister atama | ilk değer atamazsak undefined döner | ilk değer atamak zorundayız |
 
 11- Arrow fonksiyon, contructor olarak kullanılamazlar.
 Normal fonksiyon,
