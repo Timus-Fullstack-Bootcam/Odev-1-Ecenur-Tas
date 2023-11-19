@@ -145,7 +145,7 @@ Hem sunucu hem istemci tarafından erişilebilir | istemci tarafından erişileb
 --------------------- | ---------------------- | ---------------------------
 string verileri depolama |  string, number, vb. her türlü veriyi depolama | string, number, vb. her türlü veriyi depolama
 --------------------- | ---------------------- | ---------------------------
-Belirli süreye kadar verileri tutar	 |  silinene kadar verileri tutar | sekme kapanana kadar verileri tutar
+Belirli zaman sınırına kadar verileri tutar	 |  kullanıcı silmediği sürece | oturum kapanana kadar
 
 19- Senkron'da bir işlem tamamlanmadan diğer işleme geçilmez. asenkron' da işlemler aynı anda başlar ve birbirlerini beklemeden devam ederler. İşlem sonuçları hangi işlemin önce tamamlandığına göre (kendi tamamlanma sürelerine bağlı) döner.
 
